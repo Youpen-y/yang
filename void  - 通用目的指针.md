@@ -1,5 +1,5 @@
 ---
-premalink: generalpointer.html
+premalink: /generalpointer.html
 title: void *
 ---
 

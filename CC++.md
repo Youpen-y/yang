@@ -1,5 +1,5 @@
 ---
-premalink: CC++.html
+premalink: /CC++.html
 title: C/C++
 ---
 

@@ -1,6 +1,6 @@
 ---
 premalink: /generalpointer.html
-title: void *
+title: 通用目的指针
 ---
 
 

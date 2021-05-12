@@ -5,7 +5,7 @@ title: C/C++
 
 ### C
 
-- [void *](./空指针.html) 
+- [void *](./generalpointer.html) 
 
 
 

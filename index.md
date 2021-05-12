@@ -1,9 +1,8 @@
----
-title: First blog
-date: 2021/5/10
----
+## Welcome to my blog
 
-## Welcome to GitHub Pages
+-----
+
+### First Blog: [Libraries](./Libraries.md)
 
 You can use the [editor on GitHub](https://github.com/Youpen-y/yong.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 

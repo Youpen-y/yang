@@ -8,7 +8,13 @@ anthor: yang
 
 ### Libraries and Make
 
-eg:
+如何构建动态库与静态库？（以构建 `libheader` 为例 ）
+
+
+
+##### 问题引入：（函数声明 `.h` 与函数定义 `.c` 分离的好处？）
+
+1. 在头文件 `header.h` 中同时声明定义库函数， 在 `main.c` 中调用。
 
 ```c++
 // header.h
@@ -18,12 +24,12 @@ eg:
 ...
 // 函数的声明
 ...
-// 定义
+// 函数的定义
 #endif
 ```
 
 ```c++
-//	main.c
+// main.c
 #include "header.h"
 int main()
 {
@@ -31,9 +37,13 @@ int main()
 }
 ```
 
-预处理器语句 `#include "header.h"`把所有在`header.h`中使用到的代码（用户代码，调用的库 eg. `cstdlib`的代码）合并到一个文件，然后编译它。（问题：每次修改`main.c`，都要重新编译`header.h`）
+预处理器语句 `#include "header.h"`把所有在 `header.h` 中使用到的代码（用户代码，调用的库 eg. `cstdlib`的代码）合并到一个文件，然后编译它。
 
-#### 创建中间目标文件（object file）
+（存在问题：每次修改`main.c`，不管有没有修改 `header.h` 都要重新编译 `header.h` ）
+
+
+
+2. 函数声明与定义分离
 
 ```C++
 // header.h
@@ -57,11 +67,20 @@ int main()
 // main.c 同上
 ```
 
-通过`gcc -c header.c`编译产生`header.o`文件
+这种方式通过创建中间目标文件（object file），在编译或运行时链接，从而减少对不变文件的返回编译。**实际上动态库与静态库的本质在某种程度上也就是一种 `.o` 文件。**
 
-`gcc main.c header.o`编译`main.c`并在`header.o`文件中链接生成`a.out`
+以上述代码为例：
 
-这样修改`main.c`无需重新编译`header.c`,`header.h`。
+```shell
+>> gcc -c header.c   			# 编译产生header.o文件， 只需执行一次
+>> gcc main.c header.o			# 编译 main.c 并在 header.o 文件中链接生成 a.out，修改 main.c 后执行
+```
+
+这样的话，修改`main.c` 后，通过编译 `main.c` ，链接 `header.o` ，无需重新编译`header.c`,`header.h`。
+
+
+
+*一点 `make` 基础*
 
 #### Make
 
@@ -92,6 +111,8 @@ clean:
 >> make clean	# 执行清理指令
 ```
 
+
+
 ### Libraries
 
 中间目标文件（`.o`文件）存在UNIX/LINUX系统中的archive （`.a`文件）文件内。
@@ -100,16 +121,25 @@ clean:
 
 动态库：`.so, .a`(LINUX), `.dll`(WINDOWS)
 
+
+
+eg: 
+
 LINUX: /usr/lib
 
 ```shell
->> nm -g /usr/lib/libm.a
-
->> ar -t /usr/lib/libm.a | more		# 使用ar 展示 libm( math )内容
->> gcc main.c -lm		# 指明libm 编译
+>> nm -g /usr/lib/libm.a			# 使用 nm 显示 math 库符号链接
+>> ar -t /usr/lib/libm.a | more		# 使用 ar 展示 libm( math )内容
+>> gcc main.c -lm					# 指明 libm 编译
 ```
 
-规范：	`-l[libname]`  指定`gcc `编译器寻找库文档 `lib[libname].a`
+规范：	
+
+`-l[libname]`  指定`gcc `编译器寻找库文档 `lib[libname].a`
+
+`-Lpath` 其中 `path` 指定寻找的路径		 e.g. `-L/yang/lib/`
+
+
 
 #### 示例：创建`header.a` 静态链接库
 
@@ -145,7 +175,11 @@ e.g.
 >> ar t two.bak				# 显示打包文件的内容
 ```
 
-#### 示例：创建`header.so`动态链接库 (so means shared object)
+
+
+
+
+#### 示例：创建`header.so`动态链接库 (so: shared object)
 
 ```shell
 # 通过目标文件产生共享库（.so file）
@@ -168,7 +202,11 @@ e.g.
 
 ----------
 
-Listing symbols tool: `nm`,`readelf`,`objdump`（列举索引表）
+
+
+附：
+
+##### Listing symbols tool: `nm`,`readelf`,`objdump`（列举索引表）
 
 ```shell
 >> nm -g yourLib.a 						# 静态链接库符号显示
@@ -179,11 +217,11 @@ Listing symbols tool: `nm`,`readelf`,`objdump`（列举索引表）
 
 
 
-几种文件`.so`, `.a`, `.la` 
+##### 几种文件`.so`, `.a`, `.la` 
 
 `.so` 动态库（shared object）, 所用调用库者链接这一个文件，而不是在每个可执行文件中添加一个副本。
 
-`.a`静态库（archive），通过使用`ar`--(`tar`的前身，现在只用来根据`.o`目标文件制作库)。
+`.a` 静态库（archive），通过使用`ar`--(`tar`的前身，现在只用来根据`.o`目标文件制作库)。
 
-`.la`GNU `libtools`软件包用来描述组成相应库的文件的文本文件（平台独立）
+`.la` GNU `libtools`软件包用来描述组成相应库的文件的**文本文件**（平台独立）
 

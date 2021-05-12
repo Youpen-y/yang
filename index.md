@@ -2,7 +2,7 @@
 
 -----
 
-### First Blog: [Libraries](./Libraries.md)
+### First Blog: [Libraries](./Library.html)
 
 You can use the [editor on GitHub](https://github.com/Youpen-y/yong.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 

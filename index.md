@@ -8,9 +8,7 @@
 
 
 
-#### LINUX ：			[fork&&exec](./fork&exec.html)
-
-
+#### LINUX ：			
 
 #### C/C++:				[C/C++](./CC++.html)
 

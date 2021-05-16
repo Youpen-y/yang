@@ -1,6 +1,6 @@
 ---
-premalink: /编译技巧.html
-title: 编译技巧
+premalink: /compiletricks.html
+title: compiletricks
 ---
 
 #### gcc/g++（技巧）

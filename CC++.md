@@ -5,9 +5,9 @@ title: C/C++
 
 ### C
 
-- [void *](./generalpointer.html) 
+- [void *](/generalpointer.html) 
 
-
+- [others](./specialmacro.html)
 
 
 

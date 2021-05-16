@@ -1,3 +1,8 @@
-theme: jekyll-theme-architect
-title: yang's blog
-description: Bad Code Is Not Allowed Here!!!
+theme: Personal Blog
+title: Yang's blog
+description: Change is a way to grow up.
+avatar: /logo.jpg
+
+
+exclude:
+ - README.md

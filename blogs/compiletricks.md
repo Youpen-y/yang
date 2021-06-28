@@ -1,5 +1,5 @@
 ---
-premalink: /compiletricks.html
+premalink: /blogs/compiletricks.html
 title: compiletricks
 ---
 

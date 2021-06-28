@@ -1,5 +1,5 @@
 ---
-premalink: /specialmacro.html
+premalink: /blogs/specialmacro.html
 title: special macro
 ---
 

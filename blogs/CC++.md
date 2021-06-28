@@ -1,13 +1,13 @@
 ---
-premalink: /CC++.html
+premalink: /blogs/CC++.html
 title: C/C++
 ---
 
 ### C
 
-- [void *](/generalpointer.html) 
+- [void *](/blogs/generalpointer.html) 
 
-- [others](./specialmacro.html)
+- [specialmacro](/blogs/specialmacro.html)
 
 
 

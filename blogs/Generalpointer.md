@@ -1,5 +1,5 @@
 ---
-premalink: /generalpointer.html
+premalink: /blogs/generalpointer.html
 title: 通用目的指针
 ---
 

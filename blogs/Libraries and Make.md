@@ -1,5 +1,5 @@
 ---
-permalink: /Library.html
+permalink: /blogs/Library.html
 title: Library and Make
 anthor: yang
 ---

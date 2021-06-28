@@ -1,5 +1,5 @@
 ---
-premalink: /fork&exec.html
+premalink: /blogs/fork&exec.html
 title: linux task
 ---
 

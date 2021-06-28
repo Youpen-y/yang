@@ -1,7 +1,7 @@
 theme: Personal Blog
 title: Yang's blog
 description: Change is a way to grow up.
-avatar: /logo.jpg
+avatar: ./logo.jpg
 
 
 exclude:

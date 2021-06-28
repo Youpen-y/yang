@@ -1,14 +1,12 @@
-## Welcome to my blog! 
-
------
+## Welcome！！！
 
 
 
-#### 编译调试:			[DEBUG](./DEBUG.html)
+#### 编译调试:			[DEBUG](./blogs/DEBUG.html)
 
 
 
 #### LINUX ：			
 
-#### C/C++:				[C/C++](./CC++.html)
+#### C/C++:				[C/C++](./blogs/CC++.html)
 

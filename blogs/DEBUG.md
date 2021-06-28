@@ -1,5 +1,5 @@
 ---
-premalink: /DEBUG.html
+premalink: /blogs/DEBUG.html
 title: DEBUG
 ---
 

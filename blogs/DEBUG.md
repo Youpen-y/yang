@@ -13,7 +13,7 @@ title: DEBUG
 
 
 
-- [Libraries and Make](./blogs/Library.html)
-- [编译技巧](./blogs/编译技巧.html)
+- [Libraries and Make](./blogs/Library.md)
+- [编译技巧](./blogs/编译技巧.md)
 - 
 

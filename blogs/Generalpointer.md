@@ -1,5 +1,5 @@
 ---
-premalink: /blogs/generalpointer.html
+premalink: /yang/blogs/generalpointer.html
 title: 通用目的指针
 ---
 

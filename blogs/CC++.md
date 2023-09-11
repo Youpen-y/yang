@@ -5,9 +5,9 @@ title: C/C++
 
 ### C
 
-- [void *](/yang/blogs/Generalpointer.html) 
+- [void *](/yang/blogs/Generalpointer.md) 
 
-- [specialmacro](/yang/blogs/specialMacro1.html)
+- [specialmacro](/yang/blogs/specialMacro1.md)
 
 
 
